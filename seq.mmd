@@ -1,0 +1,5 @@
+sequenceDiagram
+  main->>+loginService: call
+  loginService->>+saveLog: call
+  saveLog-->>-loginService: return
+  loginService-->>-main: return

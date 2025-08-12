@@ -1,0 +1,38 @@
+{
+  "name": "@ghx/code-to-diagram",
+  "version": "0.1.0",
+  "description": "Code → Mermaid diagrams (class/flow/sequence)",
+  "type": "module",
+  "bin": {
+    "ctd": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+   "export:class": "mmdc -i diagram.mmd -o assets/diagram.png",
+   "export:flow":  "mmdc -i flow.mmd -o assets/flow.png",
+   "export:seq":   "mmdc -i seq.mmd -o assets/seq.png",
+   "export:all":   "npm run export:class && npm run export:flow && npm run export:seq"
+
+  },
+  "keywords": [
+    "uml",
+    "mermaid",
+    "diagram",
+    "ast",
+    "ts-morph"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^14.0.0",
+    "ts-morph": "^26.0.0"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^11.9.0",
+    "@types/node": "^24.2.1",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
